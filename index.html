@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI Web Designer & Developer — modern, responsive websites for businesses.">
+<title>Arshman Labs — AI Web Designer & Developer</title>
+<style>
+:root{--bg:#08090b;--panel:#101216;--panel2:#15171c;--text:#f5f5f2;--muted:#9b9da5;--line:#252830;--accent:#d8ff63;--max:1160px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.logo{font-weight:800;letter-spacing:-.04em}.logo span{color:var(--accent)}
+.navlinks{display:flex;gap:26px;color:#b9bbc2;font-size:14px}.navlinks a:hover{color:var(--text)}
+.menu{display:none;background:none;border:0;color:white;font-size:24px}
+.hero{padding:120px 0 100px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:var(--accent);filter:blur(140px);opacity:.08;right:-140px;top:-100px}
+.eyebrow{color:var(--accent);font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:20px}
+h1{font-size:clamp(52px,8vw,100px);line-height:.94;letter-spacing:-.065em;max-width:950px}
+.hero h1 span{color:#777b84}.hero p{max-width:650px;color:var(--muted);font-size:18px;margin:28px 0 34px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}.btn{padding:13px 19px;border:1px solid var(--line);border-radius:10px;font-weight:700;font-size:14px;transition:.25s}.primary{background:var(--accent);color:#0a0b0d;border-color:var(--accent)}.btn:hover{transform:translateY(-2px)}
+section{padding:95px 0;border-top:1px solid var(--line)}.sectionhead{display:flex;justify-content:space-between;gap:30px;margin-bottom:44px}.sectionhead h2{font-size:clamp(34px,5vw,58px);letter-spacing:-.05em;line-height:1}.sectionhead p{max-width:470px;color:var(--muted)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:70px}.about .big{font-size:28px;line-height:1.3;letter-spacing:-.03em}.about p{color:var(--muted);margin-top:18px}
+.project{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.browser{background:#0d0f12;border:1px solid #2c3038;border-radius:16px;overflow:hidden;box-shadow:0 25px 80px #0008}
+.browserbar{height:42px;border-bottom:1px solid #252830;display:flex;align-items:center;gap:7px;padding:0 14px}.dot{width:8px;height:8px;border-radius:50%;background:#555}.address{margin-left:10px;color:#777;font-size:11px;background:#15171c;border-radius:6px;padding:5px 10px;flex:1}
+.mocksite{padding:30px;background:linear-gradient(145deg,#eee6d5,#c9b58f);color:#201c18;min-height:390px}
+.mocktop{display:flex;justify-content:space-between;font-size:10px;font-weight:800;letter-spacing:.08em}.mocksite h3{font-family:Georgia,serif;font-size:44px;line-height:1;margin-top:70px;max-width:480px}.mocksite p{max-width:430px;margin:18px 0;font-size:13px}.mockpill{display:inline-block;padding:9px 13px;background:#201c18;color:#fff;border-radius:5px;font-size:10px}
+.projectinfo .tag{color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:800}.projectinfo h3{font-size:42px;letter-spacing:-.05em;margin:12px 0}.projectinfo p{color:var(--muted);margin-bottom:25px}.link{color:var(--accent);font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.card{background:var(--panel);border:1px solid var(--line);padding:25px 20px;min-height:170px;border-radius:12px}.num{color:#5f626b;font-size:12px}.card h3{margin:35px 0 7px;font-size:17px}.card p{color:var(--muted);font-size:13px}
+.skills{display:flex;flex-wrap:wrap;gap:10px}.skill{border:1px solid var(--line);border-radius:999px;padding:11px 17px;color:#c9cbd0;background:#0d0f12}
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.step{background:var(--bg);padding:25px;min-height:190px}.step b{color:var(--accent);font-size:13px}.step h3{margin:45px 0 8px}.step p{color:var(--muted);font-size:13px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:70px}.contact h2{font-size:clamp(45px,6vw,75px);line-height:.95;letter-spacing:-.06em}.contact p{color:var(--muted);margin-top:22px}.contactlinks{display:grid;gap:10px}.contactlink{border:1px solid var(--line);padding:17px 19px;border-radius:10px;display:flex;justify-content:space-between;color:#d5d6da}.contactlink:hover{border-color:#555}
+footer{padding:30px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:#747780;font-size:13px}footer strong{color:#ddd}
+.reveal{opacity:0;transform:translateY(18px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:850px){.navlinks{display:none}.menu{display:block}.hero{padding:85px 0 75px}.about,.project,.contact{grid-template-columns:1fr;gap:35px}.cards{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:1fr}.step{min-height:auto}.sectionhead{display:block}.sectionhead p{margin-top:18px}.mocksite h3{font-size:36px;margin-top:55px}}
+@media(max-width:520px){.wrap{width:min(var(--max),calc(100% - 28px))}.hero h1{font-size:54px}.hero p{font-size:16px}.cards{grid-template-columns:1fr}.mocksite{min-height:330px;padding:22px}.mocksite h3{font-size:31px}.projectinfo h3{font-size:34px}footer{display:block}footer div+div{margin-top:10px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+<a class="logo" href="#home">ARSHMAN <span>LABS</span></a>
+<div class="navlinks"><a href="#about">About</a><a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a></div>
+<button class="menu" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+</nav>
+
+<main id="home">
+<section class="hero" style="border-top:0">
+<div class="eyebrow">AI Web Designer & Developer</div>
+<h1>Modern websites.<br><span>Built to stand out.</span></h1>
+<p>I create modern, responsive and high-converting websites for businesses using AI and modern web technologies.</p>
+<div class="btns"><a class="btn primary" href="#work">View My Work</a><a class="btn" href="#contact">Contact Me</a></div>
+</section>
+
+<section id="about" class="reveal">
+<div class="sectionhead"><h2>About</h2><p>Design, technology and AI working together to create polished digital experiences.</p></div>
+<div class="about"><div class="big">I’m an AI Web Designer & Developer focused on creating modern, responsive websites for businesses.</div><div><p>I combine AI-assisted development with thoughtful design and modern web technologies to build websites that look professional, work smoothly and help businesses establish a stronger online presence.</p></div></div>
+</section>
+
+<section id="work" class="reveal">
+<div class="sectionhead"><h2>Selected work</h2><p>A demo project built to demonstrate restaurant web design, responsive layouts and conversion-focused structure.</p></div>
+<div class="project">
+<div class="browser">
+<div class="browserbar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><div class="address">lahore-spice-house-digital.lovable.app</div></div>
+<div class="mocksite"><div class="mocktop"><span>LAHORE SPICE HOUSE</span><span>SINCE 1998 · LAHORE</span></div><h3>Authentic Pakistani Flavors, Made With Tradition</h3><p>Slow-cooked karahis, charcoal-grilled BBQ and hand-rolled naan.</p><span class="mockpill">VIEW MENU</span></div>
+</div>
+<div class="projectinfo"><div class="tag">01 / Restaurant Website</div><h3>Lahore Spice House</h3><p>A premium Pakistani restaurant website featuring a menu, gallery, restaurant story, reviews, location information and a table reservation form.</p><a class="link" href="https://lahore-spice-house-digital.lovable.app" target="_blank" rel="noopener">View Live Website ↗</a><p style="font-size:12px;margin-top:18px">Demo/sample project — not a real client website.</p></div>
+</div>
+</section>
+
+<section id="services" class="reveal">
+<div class="sectionhead"><h2>Services</h2><p>Web experiences designed around clarity, credibility and business goals.</p></div>
+<div class="cards">
+<div class="card"><span class="num">01</span><h3>Business Websites</h3><p>Professional websites that establish trust.</p></div>
+<div class="card"><span class="num">02</span><h3>Restaurant Websites</h3><p>Menus, galleries, stories and reservations.</p></div>
+<div class="card"><span class="num">03</span><h3>Landing Pages</h3><p>Focused pages built around a clear CTA.</p></div>
+<div class="card"><span class="num">04</span><h3>Portfolio Websites</h3><p>Personal brands presented professionally.</p></div>
+<div class="card"><span class="num">05</span><h3>Website Redesigns</h3><p>Modern visual and UX improvements.</p></div>
+</div>
+</section>
+
+<section id="skills" class="reveal">
+<div class="sectionhead"><h2>Skills</h2><p>Tools and capabilities I use to move from idea to polished website.</p></div>
+<div class="skills"><span class="skill">AI-assisted web development</span><span class="skill">Responsive web design</span><span class="skill">UI/UX design</span><span class="skill">Website creation</span><span class="skill">Prompt engineering</span><span class="skill">Modern web technologies</span></div>
+</section>
+
+<section id="process" class="reveal">
+<div class="sectionhead"><h2>Process</h2><p>A simple workflow focused on understanding first, then building and refining.</p></div>
+<div class="process">
+<div class="step"><b>01</b><h3>Understand</h3><p>Business, goals and target audience.</p></div>
+<div class="step"><b>02</b><h3>Design</h3><p>Modern structure and visual direction.</p></div>
+<div class="step"><b>03</b><h3>Build</h3><p>AI and modern web technologies.</p></div>
+<div class="step"><b>04</b><h3>Refine</h3><p>Responsiveness, usability and details.</p></div>
+<div class="step"><b>05</b><h3>Launch</h3><p>Deliver a polished website ready to use.</p></div>
+</div>
+</section>
+
+<section id="contact" class="reveal">
+<div class="contact"><div><div class="eyebrow">Let’s work together</div><h2>Have a business that needs a website?</h2><p>Let’s build something great.</p></div>
+<div class="contactlinks">
+<a class="contactlink" href="https://wa.me/" target="_blank">WhatsApp <span>↗</span></a>
+<a class="contactlink" href="mailto:your@email.com">Email <span>↗</span></a>
+<a class="contactlink" href="#" onclick="return false">Instagram <span>↗</span></a>
+<a class="contactlink" href="#" onclick="return false">LinkedIn <span>↗</span></a>
+</div></div>
+</section>
+</main>
+
+<footer><div><strong>ARSHMAN LABS</strong> — AI Web Designer & Developer</div><div>Modern websites. Built with AI. Designed to impress. · © 2026</div></footer>
+</div>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+</script>
+</body>
+</html>
